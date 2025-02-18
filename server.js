@@ -13,13 +13,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// In-memory data store
-let certificates = [];
-let studentsData = { validStudentIds: [] };
-let studentStatusData = [];
-let studentCertificates = [];
-let studentProjects = [];
-
 // JSON file paths
 const studentsJsonFilePath = 'lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json';
 const certificatesJsonFilePath = 'lundi sutri kuch bhi/userrandomstudenteracheckcertificates.json';
@@ -50,23 +43,23 @@ const writeJsonFile = async (filePath, data) => {
   }
 };
 
-// API to store certificates in memory
+// API to store certificates in MongoDB
 app.post("/api/certificates", async (req, res) => {
   try {
     const { certId, userName, issueDate, validity, studentId } = req.body;
-    const newCertificate = { certId, userName, issueDate, validity, studentId };
-    certificates.push(newCertificate);
+    const newCertificate = new Certificate({ certId, userName, issueDate, validity, studentId });
+    await newCertificate.save();
     res.status(201).json({ message: "Certificate stored successfully!" });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// API to verify certificates in memory
+// API to verify certificates in MongoDB
 app.get("/api/certificates/:certId", async (req, res) => {
   try {
     const { certId } = req.params;
-    const certificate = certificates.find(cert => cert.certId === certId);
+    const certificate = await Certificate.findOne({ certId });
     if (!certificate) {
       return res.status(404).json({ message: "Certificate not found!" });
     }
