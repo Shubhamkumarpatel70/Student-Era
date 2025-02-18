@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const fs = require('fs').promises;
@@ -14,21 +13,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// Database connection (for certificates)
-mongoose.connect("mongodb://localhost:27017/certificatesDB")
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
-
-// Certificate Schema (MongoDB)
-const certificateSchema = new mongoose.Schema({
-  certId: { type: String, required: true, unique: true },
-  userName: { type: String, required: true },
-  issueDate: { type: Date, required: true },
-  validity: { type: Date },
-  studentId: { type: String, required: true }  // Ensure this field is required
-});
-
-const Certificate = mongoose.model("Certificate", certificateSchema);
+// In-memory data store
+let certificates = [];
+let studentsData = { validStudentIds: [] };
+let studentStatusData = [];
+let studentCertificates = [];
+let studentProjects = [];
 
 // JSON file paths
 const studentsJsonFilePath = 'lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json';
@@ -60,23 +50,23 @@ const writeJsonFile = async (filePath, data) => {
   }
 };
 
-// API to store certificates in MongoDB
+// API to store certificates in memory
 app.post("/api/certificates", async (req, res) => {
   try {
     const { certId, userName, issueDate, validity, studentId } = req.body;
-    const newCertificate = new Certificate({ certId, userName, issueDate, validity, studentId });
-    await newCertificate.save();
+    const newCertificate = { certId, userName, issueDate, validity, studentId };
+    certificates.push(newCertificate);
     res.status(201).json({ message: "Certificate stored successfully!" });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// API to verify certificates in MongoDB
+// API to verify certificates in memory
 app.get("/api/certificates/:certId", async (req, res) => {
   try {
     const { certId } = req.params;
-    const certificate = await Certificate.findOne({ certId });
+    const certificate = certificates.find(cert => cert.certId === certId);
     if (!certificate) {
       return res.status(404).json({ message: "Certificate not found!" });
     }
