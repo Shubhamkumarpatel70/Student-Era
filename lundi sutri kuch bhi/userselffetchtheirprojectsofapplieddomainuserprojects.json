@@ -1,0 +1,48 @@
+[
+  {
+    "internshipDomain": "Web Development",
+    "studentIds": [
+      "1122",
+      "ayush"
+    ],
+    "pdfFile": "tasks/projects/Web Development.pdf"
+  },
+  {
+    "internshipDomain": "Android Development",
+    "studentIds": [
+      "ayush"
+    ],
+    "pdfFile": "tasks/projects/Android Development.pdf"
+  },
+  {
+    "internshipDomain": "Java Development",
+    "studentIds": [
+      "ayush"
+    ],
+    "pdfFile": "tasks/projects/Java Development.pdf"
+  },
+  {
+    "internshipDomain": "Python Development",
+    "studentIds": [
+      "ayush"
+    ],
+    "pdfFile": "tasks/projects/Python Development.pdf"
+  },
+  {
+    "internshipDomain": "Graphics Design",
+    "studentIds": [
+      "SEBEY0701",
+      "ayush"
+    ],
+    "pdfFile": "tasks/projects/Graphics Design.pdf"
+  },
+  {
+    "internshipDomain": "Data Analysts",
+    "studentIds": [
+      "SEBEY0702",
+      "love",
+      "111111111"
+    ],
+    "pdfFile": "tasks/projects/Data Analysts.pdf"
+  }
+]

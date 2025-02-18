@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="document-generator-description" content="Generate personalized documents for internships, certificates, and more with Student Era.">
+  <meta name="keywords" content="Student Era,Student Era home, dashboard, student management, registration, internship, certificates, feedback, student era internship, Studentera internship, Student Era internship, online internship, virtual internship, certificates, Certificate, online certificate, era, online internship, college internship, internship for college student, free internship, paid internship, Studentera, StudentEra, about us, contact us, internship domain,">
+  <meta name="author" content="Student Era Team">
+  <title>STUDENT ERA || DOCUMENT GENERATOR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Favicon for standard devices -->
+  <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+  
+  <!-- Favicon for high-DPI screens (Retina) -->
+  <link rel="icon" href="images/logo.jpg" sizes="32x32">
+  <link rel="icon" href="images/logo.jpg" sizes="48x48">
+  
+  <!-- Apple Touch Icon for iOS devices -->
+  <link rel="apple-touch-icon" href="images/logo.jpg">
+  
+  <!-- Android Chrome Icon -->
+  <link rel="icon" href="images/logo.jpg" sizes="192x192">
+
+   <!-- Icon Font Stylesheet -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+   <!-- Libraries Stylesheet -->
+   <link href="lib/animate/animate.min.css" rel="stylesheet">
+   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+   <!-- Customized Bootstrap Stylesheet -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+   <!-- Template Stylesheet -->
+   <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Spinner Start -->
+<div id="spinner" aria-hidden="true" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
+    <i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
+</div>
+<!-- Spinner End -->
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white shadow-xl">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4">
+    <div class="flex items-center">
+      <!-- Mobile Logo -->
+      <a href="index.html" class="md:hidden">
+          <img src="images/logo.jpg" alt="Logo" class="h-8 w-8 rounded-full shadow-md">
+      </a>
+      
+      <!-- Desktop Logo with Name -->
+      <div class="hidden md:flex items-center">
+          <a href="index.html">
+              <img src="images/logo.jpg" alt="Company Logo" class="h-12 w-12 rounded-full shadow-lg">
+          </a>
+      </div>
+  </div>
+  
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6 text-base lg:text-lg font-medium items-center whitespace-nowrap">
+          <a href="index.html" class="hover:text-teal-200 transition duration-300 ease-in-out">Home</a>
+          <a href="about-us.html" class="hover:text-teal-200 transition duration-300 ease-in-out">About Us</a>
+          <a href="user-verify-certificates.html" class="hover:text-teal-200 transition duration-300 ease-in-out">Verify Certificate</a>
+          <!-- Dropdown with Arrow -->
+          <div class="relative group">
+              <button class="flex items-center hover:text-teal-200 transition duration-300 ease-in-out">
+                  Others
+                  <svg class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div class="absolute hidden group-hover:block bg-white text-gray-700 rounded-md shadow-lg mt-2 w-48">
+                  <a href="internship-zone.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Apply Internships</a>
+                  <a href="user-dashboard.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">User Dashboard</a>
+                  <a href="contact-us.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Contact Us</a>
+                  <a href="faq&helpuser.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">FAQ</a>
+                  <a href="terms&conditions.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Terms & Conditions</a>
+                  <a href="refundpolicies.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Refund & Privacy </a>
+              </div>
+          </div>
+          <button onclick="window.location.href='user-registration.html';" class="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-500 transition duration-300 ease-in-out focus:outline-none">
+              Registration
+          </button>
+      </nav>
+      <!-- Hamburger Menu -->
+      <button id="menuButton" class="block md:hidden focus:outline-none menu-icon">
+          <span class="block w-6 h-1 bg-white mb-1"></span>
+          <span class="block w-6 h-1 bg-white mb-1"></span>
+          <span class="block w-6 h-1 bg-white"></span>
+      </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden absolute bg-gradient-to-b from-teal-500 via-cyan-600 to-blue-700 w-full text-white z-10" style="height: 90rem;">
+      <nav class="menu-slide text-lg">
+          <a href="index.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Home</a>
+          <a href="about-us.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">About Us</a>
+          <a href="user-verify-certificates.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Verify Certificate</a>
+          <!-- Mobile Dropdown with Arrow -->
+          <div class="group">
+              <button class="block w-full text-left px-4 py-3 hover:bg-teal-600 transition duration-300 flex items-center">
+                  Others
+                  <svg class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div class="hidden group-hover:block ml-4 bg-white text-gray-700 rounded-md shadow-lg">
+                  <a href="internship-zone.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Apply Internships</a>
+                  <a href="user-dashboard.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">User Dashboard</a>
+                  <a href="contact-us.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Contact Us</a>
+                  <a href="faq&helpuser.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">FAQ</a>
+                  <a href="terms&conditions.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Terms & Conditions</a>
+                  <a href="refundpolicies.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Refund & Privacy </a>
+              </div>
+          </div>
+          <button onclick="window.location.href='user-registration.html';" class="bg-teal-600 ml-6 text-white px-6 py-2 rounded-md hover:bg-teal-500 transition duration-300 ease-in-out focus:outline-none">
+              Registration
+          </button>
+      </nav>
+  </div>
+</header>
+
+  <!-- Main Section -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-xl">
+        <h2 class="text-4xl font-extrabold text-center text-teal-600 mb-8">Generate Your Certificate</h2>
+
+        <!-- Error/Success Messages -->
+        <div id="messageArea" class="hidden text-sm p-4 mb-6 rounded-md"></div>
+
+        <!-- Form -->
+        <form id="uploadForm" name="google-sheet" onsubmit="verifyAndGenerateCertificate(event)">
+          <div class="mb-4">
+            <label for="name" class="block text-lg font-medium text-gray-700">Full Name</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500" placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-lg font-medium text-gray-700">Email ID</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-4">
+            <label for="studentId" class="block text-lg font-medium text-gray-700">Student ID</label>
+            <input type="text" id="studentId" name="studentId" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500" placeholder="Enter your Student ID" required>
+          </div>
+          <div class="mb-4">
+            <label for="documentType" class="block text-lg font-medium text-gray-700">Document Type</label>
+            <select id="documentType" name="documentType" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-teal-500" required>
+              <option value="completionCertificate">Completion Certificate</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded-md font-medium hover:bg-teal-500 transition">Verify & Generate</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Modal -->
+  <div id="certificateModal" class="hidden fixed inset-0 mt-4 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg p-8 max-w-3xl w-full shadow-2xl">
+      <h3 class="text-2xl font-bold text-teal-600 mb-4 text-center">Generated Certificate</h3>
+      <canvas id="certificateCanvas" class="w-full rounded-lg shadow-md h-80"></canvas> <!-- Set fixed height for the canvas -->
+      <div class="text-right mt-4">
+        <button onclick="downloadCertificate()" class="bg-teal-600 text-white px-8 py-2 rounded-md hover:bg-teal-500 transition">Download</button>
+        <button onclick="closeModal()" class="ml-4 bg-gray-600 text-white px-8 py-2 rounded-md hover:bg-gray-500 transition">Close</button>
+      </div>
+    </div>
+  </div>
+<!-- Scroll Up Icon -->
+<div class="scroll-up-icon-container">
+  <a href="#" class="scroll-up-icon">
+      <i class="fas fa-chevron-up text-white"></i>
+  </a>
+</div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-10">
+  <div class="container mx-auto px-6 md:px-12">
+      <!-- Footer Content -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Company Information Section -->
+          <div>
+              <h3 class="text-xl font-bold mb-4 flex items-center space-x-2">
+                  <img src="images/logo.jpg" alt="Student Era Logo" class="w-12 h-12 rounded-full">
+                  <span>Student Era</span>
+              </h3>
+              <p class="text-gray-400 mb-4">
+                  Student Era is dedicated to helping students find internships, job opportunities, and career growth paths. We provide internships along with professional training to equip students with the necessary skills for their career journey. Join us and start your journey today.
+              </p>                
+          </div>
+          
+
+          <!-- Useful Links Section -->
+          <nav aria-label="Footer navigation">
+              <h3 class="text-xl font-bold mb-4">Useful Links</h3>
+              <ul class="space-y-2">
+                  <li><a href="about-us.html" class="text-gray-400 hover:text-white">Know About Us</a></li>
+                  <li><a href="faq&helpuser.html" class="text-gray-400 hover:text-white">FAQ & Help</a></li>
+                  <li><a href="terms&conditions.html" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                  <li><a href="internship-zone.html" class="text-gray-400 hover:text-white">Apply Internship</a></li>
+                  <li><a href="contact-us.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+              </ul>
+          </nav>
+
+          <!-- Social Media Section -->
+          <div>
+              <h3 class="text-xl font-bold mb-4">Connect with Us</h3>
+              <p class="text-gray-400 mb-4">Follow us on social media for updates and news.</p>
+              <div class="flex space-x-4">
+                  <a href="https://chat.whatsapp.com/HJbdKI2DTGX36SI36Iwb1Y" target="_blank" class="text-gray-400 hover:text-white" aria-label="WhatsApp">
+                      <i class="fab fa-whatsapp text-2xl"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/studentera/" target="_blank" class="text-gray-400 hover:text-white" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin-in text-2xl"></i>
+                  </a>
+                  <a href="https://www.instagram.com/officialstudentera/?hl=en" target="_blank" class="text-gray-400 hover:text-white" aria-label="Instagram">
+                      <i class="fab fa-instagram text-2xl"></i>
+                  </a>
+                  <a href="https://t.me/studenterainternship" target="_blank" class="text-gray-400 hover:text-white" aria-label="Telegram">
+                      <i class="fab fa-telegram-plane text-2xl"></i>
+                  </a>
+              </div>
+          </div>
+          
+          <!-- Contact Us Section -->
+          <address>
+              <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+              <p class="text-gray-400 mb-4">
+                  Have any questions? Feel free to reach out to us for more information.
+              </p>
+              <ul>
+                  <li class="mb-2">
+                      <i class="fas fa-phone-alt mr-2"></i>
+                      <a href="tel:+91- 90278 80288" class="text-gray-400 hover:text-white">+91- 90278 80288</a>
+                      <p class="text-gray-400 mb-2">
+                         (Monday - Saturday) 10 AM - 6 PM
+                      </p>
+                  </li>
+                  <li class="mb-2">
+                      <i class="fas fa-envelope mr-2"></i>
+                      <a href="mailto:contact.studentera@gmail.com" class="text-gray-400 hover:text-white">contact.studentera@gmail.com</a>
+                  </li>
+              </ul>
+          </address>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+          <p class="text-sm text-gray-500">
+              &copy; <span id="current-year"></span> Student Era. All rights reserved.
+          </p>
+      </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Show Message
+  function showMessage(message, type) {
+    const messageArea = document.getElementById("messageArea");
+    messageArea.textContent = message;
+    messageArea.className = `text-sm p-4 mb-6 rounded-md ${type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`;
+    messageArea.classList.remove("hidden");
+  }
+
+  // Close Modal
+  function closeModal() {
+    const modal = document.getElementById("certificateModal");
+    if (modal) modal.classList.add("hidden");
+  }
+
+  // Verify and Generate Certificate with Delay
+  async function verifyAndGenerateCertificate(event) {
+    event.preventDefault();
+
+    // Show the loading spinner and message
+    const spinner = document.getElementById("spinner");
+    const messageArea = document.getElementById("messageArea");
+    spinner.classList.remove("hidden");
+    messageArea.classList.add("hidden");
+    messageArea.textContent = "Please wait, your certificate is being generated...";
+    messageArea.classList.remove("hidden");
+
+    const studentId = document.getElementById("studentId").value;
+
+    try {
+      // Fetch JSON Data
+      const [validStudentIds, internshipProgress, completedInternship, certificates] = await Promise.all([
+        fetch('lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json').then(res => res.json()),
+        fetch('lundi sutri kuch bhi/checkprogressofinternshipofusersinternshipprogress.json').then(res => res.json()),
+        fetch('lundi sutri kuch bhi/progressreportuserofinternshipscompletedinternship.json').then(res => res.json()),
+        fetch('lundi sutri kuch bhi/userrandomstudenteracheckcertificates.json').then(res => res.json())
+      ]);
+
+      // Verification Logic
+      if (!validStudentIds.validStudentIds.includes(studentId)) {
+        showMessage("Invalid Student ID.", "error");
+        spinner.classList.add("hidden");
+        return;
+      }
+
+      const internshipStatus = internshipProgress.find(entry => entry.studentId === studentId);
+      if (!internshipStatus || internshipStatus.status !== "complete") {
+        showMessage("Your task is not complete. Please complete your tasks.", "error");
+        spinner.classList.add("hidden");
+        return;
+      }
+
+      const certificateEntry = completedInternship.find(entry => entry.studentId === studentId);
+      if (!certificateEntry) {
+        showMessage("Certificate not found. Please wait.", "error");
+        spinner.classList.add("hidden");
+        return;
+      }
+
+      const certificateDetails = certificates.find(entry => entry.certificateNumber === certificateEntry.certificateNumber);
+      if (!certificateDetails) {
+        showMessage("Certificate details not available.", "error");
+        spinner.classList.add("hidden");
+        return;
+      }
+
+      // Generate Certificate
+      generateCertificateOnCanvas(certificateDetails, studentId);
+
+      // Delay before showing the modal with certificate
+      setTimeout(() => {
+        document.getElementById("certificateModal").classList.remove("hidden");
+        showMessage("Certificate generated successfully!", "success");
+
+        // Hide spinner after completion
+        spinner.classList.add("hidden");
+      }, 5000); // 5 seconds delay
+
+    } catch (error) {
+      showMessage("An error occurred while verifying your details.", "error");
+      console.error(error); // Log error for debugging purposes
+      spinner.classList.add("hidden");
+    }
+  }
+
+  // Function to generate the certificate canvas (no changes here)
+  function generateCertificateOnCanvas(details, studentId) {
+    const canvas = document.getElementById("certificateCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = 1200; // Increased width for improved layout
+    canvas.height = 850; // Increased height for better spacing
+
+    // Load company logo image
+    const logo = new Image();
+    logo.src = 'images/logo.jpg'; // Path to your company logo image
+
+    // Draw certificate content when logo loads
+    logo.onload = () => {
+      // Background and border styling
+      ctx.fillStyle = "#fdfdfd"; // Light neutral background
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.strokeStyle = "#4fd1c5"; // Teal border
+      ctx.lineWidth = 12;
+      ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+      // Draw the logo in the top-left corner
+      ctx.drawImage(logo, 50, 50, 120, 120);
+
+      // Certificate title
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#2c5282"; // Deep blue for title
+      ctx.font = "bold 40px 'Arial Black', sans-serif";
+      ctx.fillText("Certificate of Completion", canvas.width / 2, 190);
+
+      // Subtitle
+      ctx.font = "italic 22px Arial";
+      ctx.fillStyle = "#4a5568"; // Gray for subtitle
+      ctx.fillText("This certificate is proudly presented to", canvas.width / 2, 250);
+
+      // Recipient's name
+      ctx.font = "bold 36px 'Arial', sans-serif";
+      ctx.fillStyle = "#2c5282";
+      ctx.fillText(`${details.name}`, canvas.width / 2, 300);
+
+      // Course and details
+      ctx.font = "24px Arial";
+      ctx.fillStyle = "#2d3748"; // Darker gray for content
+      ctx.fillText(`For successfully completing the internship on:`, canvas.width / 2, 350);
+      ctx.fillText(`${details.course}`, canvas.width / 2, 390);
+
+      // Date and certificate number
+      ctx.fillText(`Certificate Issued on: ${details.issuedDate}`, canvas.width / 2, 430);
+      ctx.fillText(`Certificate Number: ${details.certificateNumber}`, canvas.width / 2, 470);
+      ctx.fillText(`Duration of Internship: ${details.duration}`, canvas.width / 2, 510);
+      ctx.fillText(`Student Id: ${details.studentId}`, canvas.width / 2, 550);
+
+      // Footer Section
+      ctx.font = "18px Arial"; // Slightly larger text
+      ctx.textAlign = "center";
+
+      // CEO Signature Section
+      ctx.fillText("CEO Signature", canvas.width / 4, 750); // Text below the signature line
+      ctx.moveTo(canvas.width / 6, 710); // Line for CEO signature
+      ctx.lineTo(canvas.width / 3, 710);
+      ctx.strokeStyle = "#4a5568";
+      ctx.lineWidth = 3; // Thicker line for visibility
+      ctx.stroke();
+
+      // Co-Founder Signature Section
+      ctx.fillText("Co-Founder Signature", (3 * canvas.width) / 4, 750); // Text below the signature line
+      ctx.moveTo((2 * canvas.width) / 3, 710); // Line for Co-Founder signature
+      ctx.lineTo((5 * canvas.width) / 6, 710);
+      ctx.strokeStyle = "#4a5568";
+      ctx.lineWidth = 3; // Thicker line for visibility
+      ctx.stroke();
+
+      // Create a new image element
+      var stampImage = new Image();
+      stampImage.src = 'images/DOC/STAMP.png'; // Replace with the actual path to your image
+
+      // Ensure the image is loaded before drawing it onto the canvas
+      stampImage.onload = function() {
+        // Company Seal Section (Between Signatures)
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, 650, 50, 0, 2 * Math.PI); // Further adjust the Y position to move the circle up
+        ctx.strokeStyle = "#2b6cb0";
+        // Removed lineWidth property to remove the thick border
+
+        // Draw the stamp image inside the circle (adjust the x and y for proper centering)
+        var imageSize = 180; // Increase the size of the image (width and height)
+        ctx.drawImage(stampImage, (canvas.width / 2) - (imageSize / 2), 600, imageSize, imageSize); // Adjusted Y position for stamp
+
+        // Optionally add text under the seal or on top
+        ctx.fillStyle = "#2b6cb0";
+        ctx.fillText("Company Stamp", canvas.width / 2, 720); // Adjusted the Y position of the text to move it up
+        
+        ctx.closePath();
+      };
+
+      // Adding Signature Images with Increased Size
+      const ceoSignature = new Image();
+      ceoSignature.src = 'images/Doc/CEO.png'; // Path to CEO signature image
+      ceoSignature.onload = () => {
+        // Center the signature on the line with larger dimensions
+        const ceoLineCenter = (canvas.width / 6 + canvas.width / 3) / 2;
+        ctx.drawImage(ceoSignature, ceoLineCenter - 150, 600, 280, 180); // Increased size to 150x60
+      };
+
+      const coFounderSignature = new Image();
+      coFounderSignature.src = 'images/Doc/CO Founder1.png'; // Path to Co-Founder signature image
+      coFounderSignature.onload = () => {
+        // Center the signature on the line with larger dimensions
+        const coFounderLineCenter = ((2 * canvas.width) / 3 + (5 * canvas.width) / 6) / 2;
+        ctx.drawImage(coFounderSignature, coFounderLineCenter - 140, 600, 280, 180); // Increased size to 150x60
+      };
+
+    };
+  }
+
+
+
+
+
+  // Download Certificate with delay
+  function downloadCertificate() {
+    const canvas = document.getElementById("certificateCanvas");
+
+    // Show loading message or spinner during delay
+    showMessage("Your certificate is being prepared for download...", "success");
+
+    // Add 5 seconds delay before downloading
+    setTimeout(() => {
+      const studentName = document.getElementById("name").value.trim().replace(/\s+/g, '-'); // Get user name and sanitize
+      const link = document.createElement("a");
+      link.download = `${studentName}-Internship_Certificate.png`; // Name the download file with user's name
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }, 5000); // 5 seconds delay
+  }
+</script>
+
+
+</body>
+
+</html>

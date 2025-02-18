@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUDENT ERA || FEEDBACK FORM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Favicon for standard devices -->
+  <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+  
+  <!-- Favicon for high-DPI screens (Retina) -->
+  <link rel="icon" href="images/logo.jpg" sizes="32x32">
+  <link rel="icon" href="images/logo.jpg" sizes="48x48">
+  
+  <!-- Apple Touch Icon for iOS devices -->
+  <link rel="apple-touch-icon" href="images/logo.jpg">
+  
+  <!-- Android Chrome Icon -->
+  <link rel="icon" href="images/logo.jpg" sizes="192x192">
+
+   <!-- Icon Font Stylesheet -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+   <!-- Libraries Stylesheet -->
+   <link href="lib/animate/animate.min.css" rel="stylesheet">
+   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+   <!-- Customized Bootstrap Stylesheet -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+   <!-- Template Stylesheet -->
+   <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white shadow-xl">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4">
+    <div class="flex items-center">
+      <!-- Mobile Logo -->
+      <a href="index.html" class="md:hidden">
+          <img src="images/logo.jpg" alt="Logo" class="h-8 w-8 rounded-full shadow-md">
+      </a>
+      
+      <!-- Desktop Logo with Name -->
+      <div class="hidden md:flex items-center">
+          <a href="index.html">
+              <img src="images/logo.jpg" alt="Company Logo" class="h-12 w-12 rounded-full shadow-lg">
+          </a>
+      </div>
+  </div>
+  
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6 text-base lg:text-lg font-medium items-center whitespace-nowrap">
+          <a href="index.html" class="hover:text-teal-200 transition duration-300 ease-in-out">Home</a>
+          <a href="about-us.html" class="hover:text-teal-200 transition duration-300 ease-in-out">About Us</a>
+          <a href="user-verify-certificates.html" class="hover:text-teal-200 transition duration-300 ease-in-out">Verify Certificate</a>
+          <!-- Dropdown with Arrow -->
+          <div class="relative group">
+              <button class="flex items-center hover:text-teal-200 transition duration-300 ease-in-out">
+                  Others
+                  <svg class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div class="absolute hidden group-hover:block bg-white text-gray-700 rounded-md shadow-lg mt-2 w-48">
+                  <a href="internship-zone.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Apply Internships</a>
+                  <a href="user-dashboard.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">User Dashboard</a>
+                  <a href="contact-us.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Contact Us</a>
+                  <a href="faq&helpuser.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">FAQ</a>
+                  <a href="terms&conditions.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Terms & Conditions</a>
+                  <a href="refundpolicies.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Refund & Privacy</a>
+              </div>
+          </div>
+          <button onclick="window.location.href='user-registration.html';" class="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-500 transition duration-300 ease-in-out focus:outline-none">
+              Registration
+          </button>
+      </nav>
+      <!-- Hamburger Menu -->
+      <button id="menuButton" class="block md:hidden focus:outline-none menu-icon">
+          <span class="block w-6 h-1 bg-white mb-1"></span>
+          <span class="block w-6 h-1 bg-white mb-1"></span>
+          <span class="block w-6 h-1 bg-white"></span>
+      </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden absolute bg-gradient-to-b from-teal-500 via-cyan-600 to-blue-700 w-full text-white z-10" style="height: 90rem;">
+      <nav class="menu-slide text-lg">
+          <a href="index.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Home</a>
+          <a href="about-us.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">About Us</a>
+          <a href="user-verify-certificates.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Verify Certificate</a>
+          <!-- Mobile Dropdown with Arrow -->
+          <div class="group">
+              <button class="block w-full text-left px-4 py-3 hover:bg-teal-600 transition duration-300 flex items-center">
+                  Others
+                  <svg class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div class="hidden group-hover:block ml-4 bg-white text-gray-700 rounded-md shadow-lg">
+                  <a href="internship-zone.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Apply Internships</a>
+                  <a href="user-dashboard.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">User Dashboard</a>
+                  <a href="contact-us.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Contact Us</a>
+                  <a href="faq&helpuser.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">FAQ</a>
+                  <a href="terms&conditions.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Terms & Conditions</a>
+                  <a href="refundpolicies.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Refund & Privacy</a>
+              </div>
+          </div>
+          <button onclick="window.location.href='user-registration.html';" class="bg-teal-600 ml-6 text-white px-6 py-2 rounded-md hover:bg-teal-500 transition duration-300 ease-in-out focus:outline-none">
+              Registration
+          </button>
+      </nav>
+  </div>
+</header>
+
+
+<!-- Scroll Up Icon -->
+<div class="scroll-up-icon-container">
+    <a href="#" class="scroll-up-icon">
+        <i class="fas fa-chevron-up text-white"></i>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto px-6 md:px-12">
+        <!-- Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Information Section -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 flex items-center space-x-2">
+                    <img src="images/logo.jpg" alt="Student Era Logo" class="w-12 h-12 rounded-full">
+                    <span>Student Era</span>
+                </h3>
+                <p class="text-gray-400 mb-4">
+                    Student Era is dedicated to helping students find internships, job opportunities, and career growth paths. We provide internships along with professional training to equip students with the necessary skills for their career journey. Join us and start your journey today.
+                </p>                
+            </div>
+            
+
+            <!-- Useful Links Section -->
+            <nav aria-label="Footer navigation">
+                <h3 class="text-xl font-bold mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="about-us.html" class="text-gray-400 hover:text-white">Know About Us</a></li>
+                    <li><a href="faq&helpuser.html" class="text-gray-400 hover:text-white">FAQ & Help</a></li>
+                    <li><a href="terms&conditions.html" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                    <li><a href="internship-zone.html" class="text-gray-400 hover:text-white">Apply Internship</a></li>
+                    <li><a href="contact-us.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Social Media Section -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Connect with Us</h3>
+                <p class="text-gray-400 mb-4">Follow us on social media for updates and news.</p>
+                <div class="flex space-x-4">
+                    <a href="https://chat.whatsapp.com/HJbdKI2DTGX36SI36Iwb1Y" target="_blank" class="text-gray-400 hover:text-white" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/studentera/" target="_blank" class="text-gray-400 hover:text-white" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/officialstudentera/?hl=en" target="_blank" class="text-gray-400 hover:text-white" aria-label="Instagram">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://t.me/studenterainternship" target="_blank" class="text-gray-400 hover:text-white" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Us Section -->
+            <address>
+                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <p class="text-gray-400 mb-4">
+                    Have any questions? Feel free to reach out to us for more information.
+                </p>
+                <ul>
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <a href="tel:+91- 90278 80288" class="text-gray-400 hover:text-white">+91- 90278 80288</a>
+                        <p class="text-gray-400 mb-2">
+                           (Monday - Saturday) 10 AM - 6 PM
+                        </p>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:contact.studentera@gmail.com" class="text-gray-400 hover:text-white">contact.studentera@gmail.com</a>
+                    </li>
+                </ul>
+            </address>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+            <p class="text-sm text-gray-500">
+                &copy; <span id="current-year"></span> Student Era. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

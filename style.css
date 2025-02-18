@@ -1,0 +1,243 @@
+
+
+/* Hamburger menu animation */
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+/* Smooth dropdown for mobile menu */
+.menu-slide {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.menu-slide.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* About Us Section */
+.about-section {
+  padding: 50px 0;
+  background-color: #f7f7f7;
+}
+.about-section .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a202c;
+}
+.about-section .description {
+  font-size: 1.125rem;
+  color: #4a5568;
+  line-height: 1.75;
+}
+.about-section img {
+  border-radius: 10px;
+}
+/* Footer */
+footer {
+  background-color: #2d3748;
+  color: white;
+  padding: 30px 0;
+}
+/* Swiper container and slide customization */
+.swiper {
+width: 100%;
+max-width: 300px;
+margin: 0 auto;
+}
+
+.swiper-slide {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide:hover {
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Star ratings */
+.text-yellow-400 {
+font-size: 1.2rem;
+}
+
+/* Customize navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+color: #6b46c1; /* Indigo color */
+font-size: 1rem;
+}
+
+/* Dots pagination */
+.swiper-pagination-bullet {
+background: linear-gradient(to right, #6b46c1, #9f7aea, #d53f8c);
+}
+/* Rotating gradient animation */
+.animate-border-spin {
+position: absolute;
+inset: 0;
+z-index: 0;
+animation: border-spin 4s linear infinite;
+}
+
+@keyframes border-spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+/* Star Ratings Styling */
+.text-yellow-400 {
+font-size: 1.5rem;
+}
+
+/* Responsive Swiper Adjustments */
+.swiper {
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.swiper-slide {
+width: 100%;
+padding: 1.5rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+/* Animated Gradient Border */
+.animate-gradient-spin {
+animation: gradient-spin 6s linear infinite;
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradient-spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+/* Improved Swiper Slide Styling */
+.swiper-slide {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+/* Scroll Up Icon Styling */
+.scroll-up-icon {
+    font-size: 2rem; /* Size of the scroll icon */
+    color: #ffffff; /* Icon color - white */
+    background-color: #4CAF50; /* Green background color for the icon */
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition for background-color */
+}
+
+/* Hover Effect */
+.scroll-up-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect when hovered */
+    background-color: #45a049; /* Darker green background color on hover */
+}
+
+/* Active Effect (when clicked) */
+.scroll-up-icon:active {
+    transform: scale(0.9); /* Icon slightly shrinks when clicked */
+    background-color: #388e3c; /* Even darker green on click */
+}
+
+/* Scroll Up Icon Styling */
+.scroll-up-icon-container {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    cursor: pointer;
+    animation: bounceUp 1.5s infinite;
+    z-index: 1000;
+}
+
+.scroll-up-icon {
+    font-size: 2rem; /* Size of the scroll icon */
+    color: white; /* Icon color */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background with opacity */
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.scroll-up-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect when hovered */
+}
+
+/* Scroll Up icon animation */
+@keyframes bounceUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hide the icon when at the top of the page */
+body {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .scroll-up-icon-container {
+        bottom: 8%;
+    }
+    .scroll-up-icon {
+        font-size: 1.5rem; /* Smaller icon size for mobile */
+    }
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+ 
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}

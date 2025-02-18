@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for the Android Development Internship at Student Era. Gain hands-on experience in Android app development and build your portfolio with real-world projects.">
+<meta name="keywords" content="Student Era,Student Era home, dashboard, student management, registration, internship, certificates, feedback, student era internship, Studentera internship, Student Era internship, online internship, virtual internship, certificates, Certificate, online certificate, era, online internship, college internship, internship for college student, free internship, paid internship, Studentera, StudentEra, about us, contact us, internship domain,">
+  <meta name="author" content="Student Era Team">
+  <title>STUDENT ERA || ANDROID DEVELOPMENT INTERNSHIP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Favicon for standard devices -->
+  <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+  
+  <!-- Favicon for high-DPI screens (Retina) -->
+  <link rel="icon" href="images/logo.jpg" sizes="32x32">
+  <link rel="icon" href="images/logo.jpg" sizes="48x48">
+  
+  <!-- Apple Touch Icon for iOS devices -->
+  <link rel="apple-touch-icon" href="images/logo.jpg">
+  
+  <!-- Android Chrome Icon -->
+  <link rel="icon" href="images/logo.jpg" sizes="192x192">
+
+   <!-- Icon Font Stylesheet -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+   <!-- Libraries Stylesheet -->
+   <link href="lib/animate/animate.min.css" rel="stylesheet">
+   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+   <!-- Customized Bootstrap Stylesheet -->
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+   <!-- Template Stylesheet -->
+   <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Spinner Start -->
+<div id="spinner" aria-hidden="true" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
+    <i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
+</div>
+<!-- Spinner End -->
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-white shadow-xl">
+    <div class="container mx-auto flex justify-between items-center px-4 py-4">
+      <div class="flex items-center">
+        <!-- Mobile Logo -->
+        <a href="index.html" class="md:hidden">
+            <img src="images/logo.jpg" alt="Logo" class="h-8 w-8 rounded-full shadow-md">
+        </a>
+        
+        <!-- Desktop Logo with Name -->
+        <div class="hidden md:flex items-center">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="Company Logo" class="h-12 w-12 rounded-full shadow-lg">
+            </a>
+        </div>
+    </div>
+    
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 text-base lg:text-lg font-medium items-center whitespace-nowrap">
+            <a href="index.html" class="hover:text-teal-200 transition duration-300 ease-in-out">Home</a>
+            <a href="about-us.html" class="hover:text-teal-200 transition duration-300 ease-in-out">About Us</a>
+            <a href="user-verify-certificates.html" class="hover:text-teal-200 transition duration-300 ease-in-out">Verify Certificate</a>
+            <!-- Dropdown with Arrow -->
+            <div class="relative group">
+                <button class="flex items-center hover:text-teal-200 transition duration-300 ease-in-out">
+                    Others
+                    <svg class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <!-- Dropdown Menu -->
+                <div class="absolute hidden group-hover:block bg-white text-gray-700 rounded-md shadow-lg mt-2 w-48">
+                    <a href="internship-zone.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Apply Internships</a>
+                    <a href="user-dashboard.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">User Dashboard</a>
+                    <a href="contact-us.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Contact Us</a>
+                    <a href="faq&helpuser.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">FAQ</a>
+                    <a href="terms&conditions.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Terms & Conditions</a>
+                    <a href="refundpolicies.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Refund & Privacy</a>
+                </div>
+            </div>
+            <button onclick="window.location.href='user-registration.html';" class="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-500 transition duration-300 ease-in-out focus:outline-none">
+                Registration
+            </button>
+        </nav>
+        <!-- Hamburger Menu -->
+        <button id="menuButton" class="block md:hidden focus:outline-none menu-icon">
+            <span class="block w-6 h-1 bg-white mb-1"></span>
+            <span class="block w-6 h-1 bg-white mb-1"></span>
+            <span class="block w-6 h-1 bg-white"></span>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden absolute bg-gradient-to-b from-teal-500 via-cyan-600 to-blue-700 w-full text-white z-10" style="height: 90rem;">
+        <nav class="menu-slide text-lg">
+            <a href="index.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Home</a>
+            <a href="about-us.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">About Us</a>
+            <a href="user-verify-certificates.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Verify Certificate</a>
+            <!-- Mobile Dropdown with Arrow -->
+            <div class="group">
+                <button class="block w-full text-left px-4 py-3 hover:bg-teal-600 transition duration-300 flex items-center">
+                    Others
+                    <svg class="w-5 h-5 ml-1 transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <!-- Dropdown Menu -->
+                <div class="hidden group-hover:block ml-4 bg-white text-gray-700 rounded-md shadow-lg">
+                    <a href="internship-zone.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Apply Internships</a>
+                    <a href="user-dashboard.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">User Dashboard</a>
+                    <a href="contact-us.html" class="block px-4 py-3 hover:bg-teal-600 transition duration-300">Contact Us</a>
+                    <a href="faq&helpuser.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">FAQ</a>
+                    <a href="terms&conditions.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Terms & Conditions</a>
+                    <a href="refundpolicies.html" class="block px-4 py-3 hover:bg-teal-100 transition duration-300">Refund & Privacy</a>
+                </div>
+            </div>
+            <button onclick="window.location.href='user-registration.html';" class="bg-teal-600 ml-6 text-white px-6 py-2 rounded-md hover:bg-teal-500 transition duration-300 ease-in-out focus:outline-none">
+                Registration
+            </button>
+        </nav>
+    </div>
+  </header>
+
+  <section id="android-development-internship" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 md:px-12">
+        <h2 class="text-3xl font-semibold text-center mb-8 text-teal-600">Android Development Internship Application</h2>
+
+        <!-- Note Message -->
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg mb-6" role="alert">
+            <p class="font-medium">Important Notice:</p>
+            <p>1. Please ensure all the information you provide is accurate before submitting.</p>
+            <p>2. Do not apply multiple times for the same domain, as this will render your application invalid.</p>
+            <p>3. The information provided will be used for your certificate, so fill all required fields carefully.</p>
+            <p>4. Please ensure you register and generate your Student ID before applying.</p>
+        </div>
+
+       <!-- Thank You Card (Initially Hidden) -->
+       <div id="thank-you-card" class="bg-teal-600 text-white text-center p-8 rounded-lg shadow-xl hidden">
+        <h3 class="text-2xl font-semibold">Thank You for Your Application, <span id="thank-you-name"></span>!</h3>
+        <p class="mt-4">You have successfully applied for the <span id="thank-you-domain"></span> internship.</p>
+        <p class="mt-2">You will receive a confirmation message on your email shortly.</p>
+    </div>
+
+        <!-- Internship Application Form -->
+        <form id="internship-form" name="google-sheet" class="bg-white shadow-xl rounded-lg p-10 max-w-3xl mx-auto space-y-6 border border-gray-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Full Name -->
+                <div>
+                    <label for="full-name" class="block text-lg font-medium text-gray-700">Full Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="full-name" name="full-name" class="w-full px-4 py-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" required placeholder="Enter your full name">
+                </div>
+
+                <!-- Email Address -->
+                <div>
+                    <label for="email" class="block text-lg font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" required placeholder="Enter your email address">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Mobile Number -->
+                <div>
+                    <label for="mobile" class="block text-lg font-medium text-gray-700">Mobile Number <span class="text-red-500">*</span></label>
+                    <input type="tel" id="mobile" name="mobile" class="w-full px-4 py-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" required placeholder="Enter your mobile number">
+                </div>
+
+                <!-- Student ID with Verify Button -->
+                <div>
+                    <label for="student-id" class="block text-lg font-medium text-gray-700">Student ID <span class="text-red-500">*</span></label>
+                    <div class="flex items-center space-x-2">
+                        <input type="text" id="student-id" name="student-id" placeholder="Enter Student ID" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" required>
+                        <button type="button" id="verify-btn" onclick="verifyStudent()" class="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none hover:bg-blue-600 transition duration-300 ease-in-out">
+                            Verify
+                        </button>
+                    </div>
+                    <!-- Message will be displayed here -->
+                    <div id="verification-message" class="mt-2 text-sm p-2 rounded-lg hidden"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Duration of Internship -->
+                <div>
+                    <label for="duration" class="block text-lg font-medium text-gray-700">Duration of Internship <span class="text-red-500">*</span></label>
+                    <select id="duration" name="duration" class="w-full px-4 py-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" required>
+                        <option value="" disabled selected>Select Internship Duration</option>
+                        <option value="1-week">1 weeks</option>
+                        <option value="2-week">2 weeks</option>
+                        <option value="3-week">3 weeks</option>
+                        <option value="4-week">4 weeks</option>
+                        <option value="5-week">5 weeks</option>
+                        <option value="6-week">6 weeks</option>
+                    </select>
+                </div>
+
+                <!-- Internship Domain -->
+                <div>
+                    <label for="domain" class="block text-lg font-medium text-gray-700">Internship Domain <span class="text-red-500">*</span></label>
+                    <select id="domain" name="domain" class="w-full px-4 py-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" required>
+                        <option value="" disabled selected>Select Internship Domain</option>
+                        <option value="Android-Development">Android Development</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="flex items-center">
+                <input type="checkbox" id="terms" name="terms" class="mr-3" required>
+                <label for="terms" class="text-gray-700 text-sm">I agree to the <a href="terms&conditions.html" class="text-teal-600 hover:underline">Terms and Conditions</a>.</label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center mt-6">
+                <button type="submit" id="submit-btn" class="bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-600 transition duration-300 ease-in-out" disabled>Submit Application</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Scroll Up Icon -->
+<div class="scroll-up-icon-container">
+    <a href="#" class="scroll-up-icon">
+        <i class="fas fa-chevron-up text-white"></i>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto px-6 md:px-12">
+        <!-- Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Information Section -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 flex items-center space-x-2">
+                    <img src="images/logo.jpg" alt="Student Era Logo" class="w-12 h-12 rounded-full">
+                    <span>Student Era</span>
+                </h3>
+                <p class="text-gray-400 mb-4">
+                    Student Era is dedicated to helping students find internships, job opportunities, and career growth paths. We provide internships along with professional training to equip students with the necessary skills for their career journey. Join us and start your journey today.
+                </p>                
+            </div>
+            
+
+            <!-- Useful Links Section -->
+            <nav aria-label="Footer navigation">
+                <h3 class="text-xl font-bold mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="about-us.html" class="text-gray-400 hover:text-white">Know About Us</a></li>
+                    <li><a href="faq&helpuser.html" class="text-gray-400 hover:text-white">FAQ & Help</a></li>
+                    <li><a href="terms&conditions.html" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                    <li><a href="internship-zone.html" class="text-gray-400 hover:text-white">Apply Internship</a></li>
+                    <li><a href="contact-us.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Social Media Section -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Connect with Us</h3>
+                <p class="text-gray-400 mb-4">Follow us on social media for updates and news.</p>
+                <div class="flex space-x-4">
+                    <a href="https://chat.whatsapp.com/HJbdKI2DTGX36SI36Iwb1Y" target="_blank" class="text-gray-400 hover:text-white" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/studentera/" target="_blank" class="text-gray-400 hover:text-white" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/officialstudentera/?hl=en" target="_blank" class="text-gray-400 hover:text-white" aria-label="Instagram">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://t.me/studenterainternship" target="_blank" class="text-gray-400 hover:text-white" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Us Section -->
+            <address>
+                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <p class="text-gray-400 mb-4">
+                    Have any questions? Feel free to reach out to us for more information.
+                </p>
+                <ul>
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        <a href="tel:+91- 90278 80288" class="text-gray-400 hover:text-white">+91- 90278 80288</a>
+                        <p class="text-gray-400 mb-2">
+                           (Monday - Saturday) 10 AM - 6 PM
+                        </p>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:contact.studentera@gmail.com" class="text-gray-400 hover:text-white">contact.studentera@gmail.com</a>
+                    </li>
+                </ul>
+            </address>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+            <p class="text-sm text-gray-500">
+                &copy; <span id="current-year"></span> Student Era. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    async function verifyStudent() {
+        // Get the student ID input and submit button
+        const studentId = document.getElementById("student-id").value;
+        const submitButton = document.getElementById("submit-btn");
+        const verificationMessage = document.getElementById("verification-message");
+    
+        // Show loading indicator
+        verificationMessage.textContent = "Verifying...";
+        verificationMessage.classList.remove("text-red-500", "text-green-500", "bg-red-100", "bg-green-100", "hidden");
+        verificationMessage.classList.add("text-blue-500", "bg-blue-100");
+    
+        // Fetch the student IDs from the studentid.json file
+        try {
+            const response = await fetch('lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+    
+            // Check if the student ID exists in the valid IDs list
+            if (data.validStudentIds.includes(studentId)) {
+                verificationMessage.textContent = "Student ID verified successfully!";
+                verificationMessage.classList.remove("text-red-500", "bg-red-100", "text-blue-500", "bg-blue-100");
+                verificationMessage.classList.add("text-green-500", "bg-green-100");
+    
+                // Enable the submit button
+                submitButton.disabled = false;
+            } else {
+                verificationMessage.textContent = "Invalid Student ID, please try again.";
+                verificationMessage.classList.remove("text-green-500", "bg-green-100", "text-blue-500", "bg-blue-100");
+                verificationMessage.classList.add("text-red-500", "bg-red-100");
+    
+                // Keep the submit button disabled
+                submitButton.disabled = true;
+            }
+        } catch (error) {
+            verificationMessage.textContent = "Error fetching student ID data. Please try again later.";
+            verificationMessage.classList.remove("text-green-500", "bg-green-100", "text-blue-500", "bg-blue-100");
+            verificationMessage.classList.add("text-red-500", "bg-red-100");
+            submitButton.disabled = true;
+        }
+    
+        // Ensure the message is visible
+        verificationMessage.classList.remove("hidden");
+    }
+    
+    
+    // JavaScript to handle form submission and show the Thank You card with dynamic data
+    document.getElementById("internship-form").addEventListener("submit", function(event) {
+        event.preventDefault();  // Prevent the default form submission
+    
+        // Get the form values
+        var fullName = document.getElementById("full-name").value;
+        var domain = document.getElementById("domain").value;
+    
+        // Update the Thank You card with the user's name and selected domain
+        document.getElementById("thank-you-name").textContent = fullName;
+        document.getElementById("thank-you-domain").textContent = domain;
+    
+        // Hide the form
+        document.getElementById("internship-form").classList.add("hidden");
+    
+        // Show the Thank You card
+        document.getElementById("thank-you-card").classList.remove("hidden");
+    });
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzhJ25qxgZzzzUBvvMYA5Xh0dbeqnBKaZ-5ln4kS0xMcEM9OAvxMHG9eS0-BgUSLaN-MQ/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+       
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
