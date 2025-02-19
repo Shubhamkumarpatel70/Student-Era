@@ -266,7 +266,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle the root URL request
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
