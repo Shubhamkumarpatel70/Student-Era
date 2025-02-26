@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 // Enable CORS & Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "INTERNSHIP")));
 
 // JSON file paths (Ensure proper relative paths)
 const dataDir = path.join(__dirname, "data"); // Store JSON files in a 'data' folder
