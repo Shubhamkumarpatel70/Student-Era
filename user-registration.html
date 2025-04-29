@@ -130,7 +130,17 @@
     font-size: 0.875rem;
     color: #6c757d;
   }
+  .hidden {
+  display: none;
+}
 </style>
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "rbva5lpife");
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 <!-- Spinner Start -->
@@ -346,11 +356,11 @@
           </select>
         </div>
 
-        <!-- QR Code Section -->
-        <div id="qr-code-section" class="hidden mt-4 flex flex-col items-center">
-          <h3 class="text-lg font-medium text-gray-700 self-start">Scan the QR code to pay</h3>
-          <div id="qrcode" class="mt-4"></div>
-        </div>
+    <!-- QR Code Section -->
+<div id="qr-code-section" class="hidden mt-4 flex flex-col items-center">
+  <h3 class="text-lg font-medium text-gray-700 self-start">Scan the QR code to pay</h3>
+  <div id="qrcode" class="mt-4"></div>
+</div>
 
        <!-- Transaction ID -->
 <div class="mb-4">
@@ -503,7 +513,7 @@
 </footer>
 
 <script src="script.js"></script>
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 
 <script>
@@ -559,43 +569,41 @@
 
 
 <script>
-  // Function to toggle the Transaction ID field and show QR code
   function toggleTransactionField() {
     const paymentOption = document.getElementById("payment-option").value;
-    const transactionField = document.getElementById("transaction-id-field");
+    const transactionField = document.getElementById("transactionField");
     const qrCodeSection = document.getElementById("qr-code-section");
 
     if (paymentOption === "scan&pay") {
-      // Show QR Code section
       qrCodeSection.classList.remove("hidden");
-      
-      // Generate a dynamic QR code with UPI details
       generateQRCode();
-      
-      // Show Transaction ID field if needed (for example, UTR)
       transactionField.classList.add("hidden");
     } else {
-      // Hide QR Code section and Transaction ID field if payment option is not "Scan & Pay"
       qrCodeSection.classList.add("hidden");
       transactionField.classList.add("hidden");
     }
   }
 
-  // Function to generate QR Code with UPI details
   function generateQRCode() {
-    const upiID = "STUDENTERA@Pnb";  // Replace with actual UPI ID
-    const amount = "49"; // Replace with actual amount (you can take this as input or calculate dynamically)
+    const upiID = "STUDENTERA@Pnb";
+    const amount = "129";
 
     const upiLink = `upi://pay?pa=${upiID}&pn=Student%20Era&mc=1234&tid=000000&url=https://studentera.tech&am=${amount}&cu=INR`;
 
-    // Generate QR code for the UPI payment link
+    console.log("Generating QR Code for:", upiLink);
+
+    if (typeof QRCode === "undefined") {
+      console.error("QRCode library is not loaded.");
+      return;
+    }
+
     new QRCode(document.getElementById("qrcode"), {
-      text: upiLink,  // The UPI link
-      width: 200,     // QR code width
-      height: 200,    // QR code height
-      colorDark : "#000000", // Dark color for QR code
-      colorLight : "#ffffff", // Light color for QR code
-      correctLevel : QRCode.CorrectLevel.H // Error correction level
+      text: upiLink,
+      width: 200,
+      height: 200,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
     });
   }
 </script>
@@ -711,6 +719,14 @@
     }
   }
 </script>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileInput = document.getElementById("mobile");
+    if (mobileInput) {
+      mobileInput.addEventListener("blur", generateStudentID);
+    }
+  });
+  </script>
+  
 </body>
 </html>

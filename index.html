@@ -44,6 +44,13 @@
 
    <!-- Template Stylesheet -->
    <link href="css/style.css" rel="stylesheet">
+   <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "rbva5lpife");
+</script>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -201,240 +208,436 @@
     </div>
 </div>
 <!-- Carousel End -->
-<!-- About Us Section -->
-<section id="about" class="about-section py-16 bg-gradient-to-r from-blue-100 via-indigo-200 to-purple-300">
-    <div class="container mx-auto px-6">
-        <!-- Section Title -->
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-gray-900">About Us</h2>
-            <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
-                We are committed to providing exceptional learning opportunities for students, fostering their personal and professional growth. Our mission is to empower them with the knowledge and skills to thrive in the rapidly changing world. Together, we aim to shape the future.
-            </p>
+ 
+<!-- Enhanced About Us Section -->
+<section id="about" class="about-section py-16 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Title with Decorative Elements -->
+        <div class="text-center mb-16 relative">
+            <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">About Us</span>
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                    We are committed to providing exceptional learning opportunities for students, fostering their personal and professional growth. Our mission is to empower them with the knowledge and skills to thrive in the rapidly changing world.
+                </p>
+            </div>
         </div>
         
-        <!-- About Us Content -->
+        <!-- Main Content Grid -->
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            <!-- Image Card -->
-            <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <img src="images/about/about us.avif" alt="About Us Image" class="w-full h-100 object-cover transition-transform duration-500 transform hover:scale-105">
+            <!-- Image Card with Enhanced Animation -->
+            <div class="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <img 
+                    src="images/about/about us.avif" 
+                    alt="Students learning together" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <p class="text-white text-lg font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        Empowering the next generation of innovators
+                    </p>
+                </div>
             </div>
         
             <!-- Mission and Values Card -->
-            <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
-                <h3 class="text-3xl font-semibold text-gray-900">Our Mission</h3>
-                <p class="text-gray-700 mt-4">
-                    At STUDENT ERA, we empower students through innovative programs and collaboration with industry experts. Our focus is on developing their potential, equipping them with the skills necessary to excel in the evolving professional landscape.
-                </p>
-        
-                <h4 class="mt-8 text-2xl font-semibold text-gray-900">Our Core Values</h4>
-                <ul class="list-disc pl-6 mt-4 text-gray-700 space-y-2">
-                    <li><strong>Innovation:</strong> Fostering creativity and forward-thinking solutions to challenges.</li>
-                    <li><strong>Integrity:</strong> Upholding honesty and transparency in everything we do.</li>
-                    <li><strong>Collaboration:</strong> Building a community where teamwork drives success.</li>
-                    <li><strong>Excellence:</strong> Striving for perfection in our programs and services.</li>
-                </ul>
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 lg:p-10 flex flex-col justify-center">
+                <div class="mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-700 mt-2 leading-relaxed">
+                        At STUDENT ERA, we empower students through innovative programs and collaboration with industry experts. Our focus is on developing their potential, equipping them with the skills necessary to excel in the evolving professional landscape.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl md:text-3xl font-bold text-gray-900">Core Values</h4>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-blue-100 text-blue-600 rounded-full p-1 mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="font-semibold text-gray-900">Innovation</h5>
+                                <p class="text-gray-600 mt-1">Fostering creativity and forward-thinking solutions to challenges.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-indigo-100 text-indigo-600 rounded-full p-1 mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="font-semibold text-gray-900">Integrity</h5>
+                                <p class="text-gray-600 mt-1">Upholding honesty and transparency in everything we do.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-purple-100 text-purple-600 rounded-full p-1 mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="font-semibold text-gray-900">Collaboration</h5>
+                                <p class="text-gray-600 mt-1">Building a community where teamwork drives success.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 bg-teal-100 text-teal-600 rounded-full p-1 mr-3 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="font-semibold text-gray-900">Excellence</h5>
+                                <p class="text-gray-600 mt-1">Striving for perfection in our programs and services.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- Additional Cards with Icon and Cool Colors -->
-        <div class="mt-12">
-            <!-- Grid Layout for Cards -->
-            <div class="grid md:grid-cols-3 gap-10 mx-auto">
-                
-                <!-- First Card -->
-                <div class="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-                    <!-- Image with Hover Effect -->
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="images/about/aboutus-1.jpg" alt="Education Image 1" class="w-full h-50 object-cover transform transition-transform duration-300 hover:scale-110">
+        <!-- Feature Cards -->
+        <div class="mt-20">
+         
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-white transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 group-hover:text-blue-600 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900  transition-colors duration-300 mb-3">Innovative Learning</h4>
+                        <p class="text-gray-600  transition-colors duration-300 flex-grow">
+                            Our cutting-edge programs foster creativity and critical thinking, equipping students with future-ready skills through hands-on experiences.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 group-hover:border-blue-200 transition-colors duration-300">
+                         
+                        </div>
                     </div>
-                    <!-- Title -->
-                    <h3 class="text-xl font-semibold text-white">Innovative Learning</h3>
-                    <!-- Description -->
-                    <p class="text-white mt-4">
-                        Our programs are designed to foster creativity and critical thinking, providing students with the tools to innovate and excel in their fields.
-                    </p>
                 </div>
 
-                <!-- Second Card -->
-                <div class="bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-                    <!-- Image with Hover Effect -->
-                    <div class="overflow-hidden rounded-lg h-70 mb-4">
-                        <img src="images/about/aboutus-2.jpg" alt="Education Image 2" class="w-full h-50 object-cover transform transition-transform duration-300 hover:scale-110">
+                <!-- Card 2 -->
+                <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-white transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600 group-hover:text-teal-600 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 transition-colors duration-300 mb-3">Empowering Minds</h4>
+                        <p class="text-gray-600 transition-colors duration-300 flex-grow">
+                            We cultivate independent thinking and problem-solving abilities, preparing students to tackle real-world challenges with confidence and creativity.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 group-hover:border-teal-200 transition-colors duration-300">
+                           
+                        </div>
                     </div>
-                    <!-- Title -->
-                    <h3 class="text-xl font-semibold text-white">Empowering Minds</h3>
-                    <!-- Description -->
-                    <p class="text-white mt-4">
-                        We focus on empowering students to think critically and independently, preparing them to solve real-world challenges effectively.
-                    </p>
                 </div>
 
-                <!-- Third Card -->
-                <div class="bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-                    <!-- Image with Hover Effect -->
-                    <div class="overflow-hidden rounded-lg h-65 mb-4">
-                        <img src="images/about/aboutus-3.avif" alt="Education Image 3" class="w-full object-cover transform transition-transform duration-300 hover:scale-110">
+                <!-- Card 3 -->
+                <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 p-8 h-full flex flex-col">
+                        <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-white transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600 group-hover:text-purple-600 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 transition-colors duration-300 mb-3">Future-Ready Students</h4>
+                        <p class="text-gray-600 transition-colors duration-300 flex-grow">
+                            Our comprehensive approach ensures students graduate with the knowledge, skills, and adaptability to excel in the evolving global marketplace.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 group-hover:border-purple-200 transition-colors duration-300">
+                           
+                        </div>
                     </div>
-                    <!-- Title -->
-                    <h3 class="text-xl font-semibold text-white">Future-Ready Students</h3>
-                    <!-- Description -->
-                    <p class="text-white mt-4">
-                        Our mission is to equip students with the knowledge, skills, and mindset to thrive in the ever-evolving job market and beyond.
-                    </p>
                 </div>
-
             </div>
         </div>
-
     </div>
 </section>
 
-<!-- Why Choose Us Section -->
-<section id="why-choose-us" class="py-16 bg-gradient-to-r from-blue-100 via-indigo-200 to-purple-300">
-    <div class="container mx-auto px-6 text-center">
-      <!-- Section Title -->
-      <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Why Choose Us?</h2>
-      <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-        We stand out from the rest with our innovative approach to learning, student empowerment, and our commitment to your future. Here's why we are the best choice for your growth and success.
-      </p>
-      <!-- Card Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-        
-        <!-- First Card -->
-        <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 text-center transform hover:scale-105">
-          <div class="text-4xl text-teal-600 mb-4">
-            <i class="fas fa-lightbulb"></i>
+<!-- Enhanced Why Choose Us Section -->
+<section id="why-choose-us" class="py-20 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full mb-4">Why We're Different</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Why Choose Us?</span>
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          We stand out with our innovative approach to learning, student empowerment, and commitment to your future success.
+        </p>
+      </div>
+  
+      <!-- Feature Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 p-8 h-full flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 mb-3">Innovative Approach</h3>
+            <p class="text-gray-600 transition-colors duration-300">
+              Modern strategies that foster critical thinking and problem-solving skills.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">Innovative Approach</h3>
-          <p class="text-gray-700 mt-4">
-            We implement creative and modern strategies that foster critical thinking and problem-solving skills.
-          </p>
         </div>
   
-        <!-- Second Card -->
-        <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 text-center transform hover:scale-105">
-          <div class="text-4xl text-teal-600 mb-4">
-            <i class="fas fa-users"></i>
+        <!-- Card 2 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 p-8 h-full flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600 group-hover:text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 mb-3">Collaborative Learning</h3>
+            <p class="text-gray-600 transition-colors duration-300">
+              Teamwork-driven programs that enhance shared learning experiences.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">Collaborative Learning</h3>
-          <p class="text-gray-700 mt-4">
-            We believe in the power of collaboration. Our programs encourage teamwork and shared learning experiences.
-          </p>
         </div>
   
-        <!-- Third Card -->
-        <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 text-center transform hover:scale-105">
-          <div class="text-4xl text-teal-600 mb-4">
-            <i class="fas fa-cogs"></i>
+        <!-- Card 3 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 p-8 h-full flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600 group-hover:text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 mb-3">Practical Experience</h3>
+            <p class="text-gray-600 transition-colors duration-300">
+              Hands-on learning that bridges theory with real-world application.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">Practical Experience</h3>
-          <p class="text-gray-700 mt-4">
-            Our programs focus on hands-on learning, ensuring students gain valuable real-world experience.
-          </p>
         </div>
   
-        <!-- Fourth Card -->
-        <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-8 text-center transform hover:scale-105">
-          <div class="text-4xl text-teal-600 mb-4">
-            <i class="fas fa-graduation-cap"></i>
+        <!-- Card 4 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 p-8 h-full flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 mb-3">Career Focused</h3>
+            <p class="text-gray-600 transition-colors duration-300">
+              Industry-aligned programs that prepare you for workplace success.
+            </p>
           </div>
-          <h3 class="text-xl font-semibold text-gray-900">Career Focused</h3>
-          <p class="text-gray-700 mt-4">
-            We aim to shape the future workforce by preparing students for successful careers with industry-focused skills.
-          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Enhanced Internship Categories Section -->
+  <section id="internship-categories" class="py-20 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 text-sm font-semibold text-purple-600 bg-purple-100 rounded-full mb-4">Opportunities</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">Explore Our Internship Categories</span>
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Gain hands-on experience in various fields with our specialized internship programs.
+        </p>
+      </div>
+  
+      <!-- Category Grid -->
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Category 1 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="images/internship-category/web development.avif" alt="Web Development" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Web Development</h3>
+            <p class="text-gray-600 mb-6">
+              Master modern web technologies while working on cutting-edge projects with industry experts.
+            </p>
+            <a href="internship-zone-web-development.html" 
+               class="inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full transition-colors duration-300">
+              Apply Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
   
+        <!-- Category 2 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="images/internship-category/android development.avif" alt="Android Development" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Android Development</h3>
+            <p class="text-gray-600 mb-6">
+              Build mobile applications using the latest Android frameworks and development tools.
+            </p>
+            <a href="internship-zone-android-development.html" 
+               class="inline-flex items-center px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-full transition-colors duration-300">
+              Apply Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+  
+        <!-- Category 3 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="images/internship-category/java development.avif" alt="Java Development" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Java Development</h3>
+            <p class="text-gray-600 mb-6">
+              Develop enterprise-level applications using Java and popular frameworks like Spring.
+            </p>
+            <a href="internship-zone-java-development.html" 
+               class="inline-flex items-center px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-full transition-colors duration-300">
+              Apply Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+  
+        <!-- Category 4 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="images/internship-category/python development.avif" alt="Python Development" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Python Development</h3>
+            <p class="text-gray-600 mb-6">
+              Work with Python for web development, data analysis, automation, and more.
+            </p>
+            <a href="internship-zone-python-development.html" 
+               class="inline-flex items-center px-5 py-2.5 bg-orange-600 hover:bg-orange-700 text-white text-sm font-medium rounded-full transition-colors duration-300">
+              Apply Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+  
+        <!-- Category 5 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="images/internship-category/graphic-carousel designer.avif" alt="Graphics Design" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Graphics Design</h3>
+            <p class="text-gray-600 mb-6">
+              Create visual concepts using industry-standard tools like Adobe Creative Suite.
+            </p>
+            <a href="internship-zone-graphics-carousel.html" 
+               class="inline-flex items-center px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-full transition-colors duration-300">
+              Apply Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+  
+        <!-- Category 6 -->
+        <div class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden">
+          <div class="relative overflow-hidden h-48">
+            <img src="images/internship-category/data analysts.avif" alt="Data Analysis" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Data Analysis</h3>
+            <p class="text-gray-600 mb-6">
+              Learn to analyze complex datasets and extract valuable business insights.
+            </p>
+            <a href="internship-zone-data-analysts.html" 
+               class="inline-flex items-center px-5 py-2.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium rounded-full transition-colors duration-300">
+              Apply Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- Internship Categories Section -->
-<section id="internship-categories" class="py-16 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
-  <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-extrabold text-gray-900 mb-12">Explore Our Internship Categories</h2>
-      
-      <!-- Category Grid -->
-      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <!-- Category 1 -->
-          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-              <div class="mb-6">
-                  <img src="images/internship-category/web development.avif" alt="Software Development" class="w-full h-30 rounded-4 mx-auto transition-transform duration-500 transform hover:scale-110 hover:opacity-80">
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Web Development</h3>
-              <p class="text-gray-600 mb-6">
-                  Dive deep into the world of programming and software development. Learn modern technologies, and work on cutting-edge projects.
-              </p>
-              <a href="internship-zone-web-development.html" class="inline-block bg-blue-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300">Apply Now</a>
-          </div>
-
-          <!-- Category 2 -->
-          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-              <div class="mb-6">
-                  <img src="images/internship-category/android development.avif" alt="Marketing & Strategy" class="w-full h-30 rounded-4 mx-auto transition-transform duration-500 transform hover:scale-110 hover:opacity-80">
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Android Development</h3>
-              <p class="text-gray-600 mb-6">
-                  Enhance your marketing skills through real-world strategies, social media campaigns, and data-driven decision-making.
-              </p>
-              <a href="internship-zone-android-development.html" class="inline-block bg-green-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-green-600 transition duration-300">Apply Now</a>
-          </div>
-
-          <!-- Category 3 -->
-          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-              <div class="mb-6">
-                  <img src="images/internship-category/java development.avif" alt="Content Writing" class="w-full h-30 rounded-4 mx-auto transition-transform duration-500 transform hover:scale-110 hover:opacity-80">
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Java Development</h3>
-              <p class="text-gray-600 mb-6">
-                  Write compelling content for websites, blogs, and marketing campaigns while developing strong writing and communication skills.
-              </p>
-              <a href="internship-zone-java-development.html" class="inline-block bg-purple-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-purple-600 transition duration-300">Apply Now</a>
-          </div>
-
-          <!-- Category 4 -->
-          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-              <div class="mb-6">
-                  <img src="images/internship-category/python development.avif" alt="Human Resources" class="w-full h-30 rounded-4 mx-auto transition-transform duration-500 transform hover:scale-110 hover:opacity-80">
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Python Development</h3>
-              <p class="text-gray-600 mb-6">
-                  Learn the ins and outs of recruitment, employee relations, and organizational development in a professional HR setting.
-              </p>
-              <a href="internship-zone-python-development.html" class="inline-block bg-orange-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300">Apply Now</a>
-          </div>
-
-          <!-- Category 5 -->
-          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-              <div class="mb-6">
-                  <img src="images/internship-category/graphic-carousel designer.avif" alt="Business Operations" class="w-full h-30 rounded-4 mx-auto transition-transform duration-500 transform hover:scale-110 hover:opacity-80">
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Graphics Design</h3>
-              <p class="text-gray-600 mb-6">
-                  Get hands-on experience in managing day-to-day business activities, from project management to strategy implementation.
-              </p>
-              <a href="internship-zone-graphics-carousel.html" class="inline-block bg-red-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-red-600 transition duration-300">Apply Now</a>
-          </div>
-
-          <!-- Category 6 -->
-          <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 text-center">
-              <div class="mb-6">
-                  <img src="images/internship-category/data analysts.avif" alt="Data Science" class="w-full h-30 rounded-4 mx-auto transition-transform duration-500 transform hover:scale-110 hover:opacity-80">
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Analysts</h3>
-              <p class="text-gray-600 mb-6">
-                  Learn how to analyze data, build predictive models, and make data-driven decisions in a variety of business contexts.
-              </p>
-              <a href="internship-zone-data-analysts.html" class="inline-block bg-teal-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-teal-600 transition duration-300">Apply Now</a>
-          </div>
-      </div>
-  </div>
-</section>
-
 <!-- Swiper Testimonial Section -->
-<section id="testimonials" class="py-16 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-extrabold text-gray-900 mb-12">What Our Interns Say</h2>
-
+<section id="testimonials" class="py-20 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 text-sm font-semibold text-purple-600 bg-purple-100 rounded-full mb-4">Success Stories</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">What Our Interns Say</span>
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Hear from our past interns about their transformative experiences and career growth.
+        </p>
+      </div>
         <!-- Swiper Container -->
         <div class="swiper">
             <div class="swiper-wrapper">
