@@ -141,6 +141,15 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "rbva5lpife");
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8FERS1PZ28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8FERS1PZ28');
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 <!-- Spinner Start -->
@@ -343,6 +352,8 @@
             <option value="4-week">4 weeks</option>
             <option value="5-week">5 weeks</option>
             <option value="6-week">6 weeks</option>
+            <option value="7-week">7 weeks</option>
+            <option value="8-week">8 weeks</option>
           </select>
         </div>
 
@@ -362,7 +373,7 @@
   <div id="qrcode" class="mt-4"></div>
 </div>
 
-       <!-- Transaction ID -->
+<!-- Transaction ID -->
 <div class="mb-4">
   <label for="transactionField" class="block text-sm font-medium text-gray-700">
     Transaction ID / UTR No. <span class="text-red-500">*</span>
@@ -376,8 +387,6 @@
     required 
   />
 </div>
-
-
         <!-- Payment Screenshot -->
         <div class="mb-4">
           <label for="paymentScreenshot" class="block text-sm font-medium text-gray-700">Upload Payment Screenshot</label>
@@ -555,18 +564,7 @@
       }
     });
   
-    // Show/Hide Transaction ID field based on Payment Option
-    function toggleTransactionField() {
-      const paymentOption = document.getElementById("payment-option").value;
-      const transactionField = document.getElementById("transaction-id-field");
-      if (paymentOption === "scan&pay" || paymentOption === "net-banking") {
-        transactionField.classList.remove("hidden");
-      } else {
-        transactionField.classList.add("hidden");
-      }
-    }
   </script>
-
 
 <script>
   function toggleTransactionField() {
@@ -577,10 +575,8 @@
     if (paymentOption === "scan&pay") {
       qrCodeSection.classList.remove("hidden");
       generateQRCode();
-      transactionField.classList.add("hidden");
     } else {
       qrCodeSection.classList.add("hidden");
-      transactionField.classList.add("hidden");
     }
   }
 
@@ -590,8 +586,7 @@
 
     const upiLink = `upi://pay?pa=${upiID}&pn=Student%20Era&mc=1234&tid=000000&url=https://studentera.tech&am=${amount}&cu=INR`;
 
-    console.log("Generating QR Code for:", upiLink);
-
+   
     if (typeof QRCode === "undefined") {
       console.error("QRCode library is not loaded.");
       return;
