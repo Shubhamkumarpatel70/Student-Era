@@ -1,9 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const fs = require("fs").promises;
-const path = require("path");
-
+const fs = require('fs').promises;
+const path = require('path');
 // Create the Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,23 +10,37 @@ const PORT = process.env.PORT || 5000;
 // Enable CORS for all routes
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the generated student ID JSON file
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.use(express.static(path.join(__dirname)));
+
+// In-memory data store
+let certificates = [];
+let studentsData = { validStudentIds: [] };
+let studentStatusData = [];
+let studentCertificates = [];
+let studentProjects = [];
 
 // JSON file paths
-const studentsJsonFilePath = "lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json";
-const certificatesJsonFilePath = "lundi sutri kuch bhi/userrandomstudenteracheckcertificates.json";
-const studentStatusJsonFilePath = "lundi sutri kuch bhi/checkprogressofinternshipofusersinternshipprogress.json";
-const studentCertificatesFile = "lundi sutri kuch bhi/progressreportuserofinternshipscompletedinternship.json";
-const studentProjectsJsonFilePath = "lundi sutri kuch bhi/userselffetchtheirprojectsofapplieddomainuserprojects.json";
-const internshipDomainsJsonFilePath = "lundi sutri kuch bhi/internshipdomains.json"; // New JSON file for internship domains
+const studentsJsonFilePath = 'lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json';
+const certificatesJsonFilePath = 'lundi sutri kuch bhi/userrandomstudenteracheckcertificates.json';
+const studentStatusJsonFilePath = 'lundi sutri kuch bhi/checkprogressofinternshipofusersinternshipprogress.json';
+const studentCertificatesFile = 'lundi sutri kuch bhi/progressreportuserofinternshipscompletedinternship.json';
+const studentProjectsJsonFilePath = 'lundi sutri kuch bhi/userselffetchtheirprojectsofapplieddomainuserprojects.json';
 
 // Utility function to read JSON file
 const readJsonFile = async (filePath, defaultValue = []) => {
   try {
-    const data = await fs.readFile(filePath, "utf8");
+    const data = await fs.readFile(filePath, 'utf8');
     return JSON.parse(data);
   } catch (err) {
-    if (err.code === "ENOENT") {
+    if (err.code === 'ENOENT') {
       console.log(`${filePath} not found, initializing empty data.`);
       return defaultValue;
     }
@@ -44,41 +57,54 @@ const writeJsonFile = async (filePath, data) => {
   }
 };
 
-// ==================== APIs ====================
-
-// Serve the root HTML file
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+// API to store certificates in memory
+app.post("/api/certificates", async (req, res) => {
+  try {
+    const { certId, userName, issueDate, validity, studentId } = req.body;
+    const newCertificate = { certId, userName, issueDate, validity, studentId };
+    certificates.push(newCertificate);
+    res.status(201).json({ message: "Certificate stored successfully!" });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
-// Serve static files
-app.use(express.static(path.join(__dirname)));
+// API to verify certificates in memory
+app.get("/api/certificates/:certId", async (req, res) => {
+  try {
+    const { certId } = req.params;
+    const certificate = certificates.find(cert => cert.certId === certId);
+    if (!certificate) {
+      return res.status(404).json({ message: "Certificate not found!" });
+    }
+    res.status(200).json(certificate);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
-// ==================== Student ID APIs ====================
-
-// Fetch all student IDs
-// Fetch all student IDs
-app.get("/api/student-ids", async (req, res) => {
+// API to fetch student IDs from students.json
+app.get('/generatedstudentidofregisteredstudentatstudenterastudentid', async (req, res) => {
   try {
     const studentsData = await readJsonFile(studentsJsonFilePath, { validStudentIds: [] });
     res.json({ students: studentsData.validStudentIds });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Error reading students file." });
+  }
+});
+
+// Serve the generated student ID JSON file
+app.get('/api/student-ids', async (req, res) => {
+  try {
+    const studentsData = await readJsonFile(studentsJsonFilePath, { validStudentIds: [] });
+    res.json(studentsData);
   } catch (error) {
     res.status(500).json({ message: "Error reading student IDs." });
   }
 });
 
-// Fetch all student statuses
-app.get("/api/student-status", async (req, res) => {
-  try {
-    const studentStatuses = await readJsonFile("lundi sutri kuch bhi/checkprogressofinternshipofusersinternshipprogress.json", []);
-    res.json(studentStatuses);
-  } catch (error) {
-    res.status(500).json({ message: "Error reading student statuses." });
-  }
-});
-
-// Add a new student ID
-app.post("/add-student", async (req, res) => {
+// API to add student ID
+app.post('/add-student', async (req, res) => {
   const { studentId } = req.body;
   if (!studentId || !/^[a-zA-Z0-9]+$/.test(studentId)) {
     return res.status(400).json({ message: "Invalid Student ID. Only alphanumeric IDs allowed." });
@@ -97,8 +123,8 @@ app.post("/add-student", async (req, res) => {
   }
 });
 
-// Delete a student ID
-app.delete("/delete-student", async (req, res) => {
+// API to delete student ID
+app.delete('/delete-student', async (req, res) => {
   const { studentId } = req.body;
 
   if (!studentId) {
@@ -125,20 +151,8 @@ app.delete("/delete-student", async (req, res) => {
   }
 });
 
-// ==================== Certificate APIs ====================
-
-// Fetch all certificates
-app.get("/api/certificate-numbers", async (req, res) => {
-  try {
-    const certificatesData = await readJsonFile(certificatesJsonFilePath, []);
-    res.json(certificatesData);
-  } catch (error) {
-    res.status(500).json({ message: "Error reading certificate numbers." });
-  }
-});
-
-// Add a new certificate
-app.post("/add-certificate", async (req, res) => {
+// API to add certificate details
+app.post('/add-certificate', async (req, res) => {
   const { certificateNumber, name, course, duration, college, issuedDate, studentId } = req.body;
   if (!certificateNumber || !name || !course || !duration || !college || !issuedDate || !studentId) {
     return res.status(400).json({ message: "All fields are required." });
@@ -154,251 +168,115 @@ app.post("/add-certificate", async (req, res) => {
   }
 });
 
-// Edit a certificate number
-app.put("/edit-certificate-number", async (req, res) => {
-  const { oldCertificateNumber, newCertificateNumber } = req.body;
+// API to save generated certificate numbers
+app.post('/save-certificate', async (req, res) => {
+  const { studentId, certificateNumber } = req.body;
 
-  if (!oldCertificateNumber || !newCertificateNumber) {
-    return res.status(400).json({ success: false, message: "Both old and new certificate numbers are required" });
+  if (!studentId || !certificateNumber) {
+    return res.status(400).json({ success: false, message: 'Missing studentId or certificateNumber' });
   }
 
   try {
-    let certificates = await readJsonFile(certificatesJsonFilePath, []);
-    const certificateIndex = certificates.findIndex(cert => cert.certificateNumber === oldCertificateNumber);
-
-    if (certificateIndex === -1) {
-      return res.status(404).json({ success: false, message: "Certificate number not found" });
+    let certificates = await readJsonFile(studentCertificatesFile, []);
+    const existingCertificate = certificates.find(cert => cert.certificateNumber === certificateNumber);
+    if (existingCertificate) {
+      return res.status(400).json({ success: false, message: 'Certificate number already exists' });
     }
 
-    certificates[certificateIndex].certificateNumber = newCertificateNumber;
-    await writeJsonFile(certificatesJsonFilePath, certificates);
+    certificates.push({ studentId, certificateNumber });
+    await writeJsonFile(studentCertificatesFile, certificates);
 
-    res.json({ success: true, message: "Certificate number updated successfully" });
+    res.json({ success: true, message: 'Certificate saved successfully' });
   } catch (error) {
-    res.status(500).json({ success: false, message: "Error updating certificate number" });
+    res.status(500).json({ success: false, message: 'Error saving certificate' });
   }
 });
 
-// Delete a certificate
-app.delete("/delete-certificate", async (req, res) => {
-  const { certificateNumber } = req.body;
-
-  if (!certificateNumber) {
-    return res.status(400).json({ success: false, message: "Certificate number is required" });
+// API to update student status
+app.post('/update-student-status', async (req, res) => {
+  const { studentId, status } = req.body;
+  if (!studentId || !['complete', 'incomplete'].includes(status)) {
+    return res.status(400).json({ message: "Invalid student ID or status." });
   }
 
   try {
-    let certificates = await readJsonFile(certificatesJsonFilePath, []);
-    const updatedCertificates = certificates.filter(cert => cert.certificateNumber !== certificateNumber);
-
-    if (updatedCertificates.length === certificates.length) {
-      return res.status(404).json({ success: false, message: "Certificate number not found" });
+    let studentsData = await readJsonFile(studentStatusJsonFilePath, []);
+    const studentIndex = studentsData.findIndex(student => student.studentId === studentId);
+    
+    if (studentIndex !== -1) {
+      studentsData[studentIndex].status = status;
+    } else {
+      studentsData.push({ studentId, status });
     }
-
-    await writeJsonFile(certificatesJsonFilePath, updatedCertificates);
-    res.json({ success: true, message: "Certificate deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Error deleting certificate" });
-  }
-});
-
-// ==================== Internship Domain APIs ====================
-
-// Fetch all internship domains
-app.get("/api/internship-domains", async (req, res) => {
-  try {
-    const internshipDomains = await readJsonFile(internshipDomainsJsonFilePath, []);
-    res.json(internshipDomains);
-  } catch (error) {
-    res.status(500).json({ message: "Error reading internship domains." });
-  }
-});
-
-// Fetch internship domain by domain name or student ID
-app.get("/api/internship-domain", async (req, res) => {
-  const { domain, studentId } = req.query;
-
-  try {
-    const internshipDomains = await readJsonFile(internshipDomainsJsonFilePath, []);
-
-    if (domain) {
-      const domainDetails = internshipDomains.find(d => d.internshipDomain.toLowerCase() === domain.toLowerCase());
-      if (!domainDetails) {
-        return res.status(404).json({ message: "Internship domain not found." });
-      }
-      return res.json(domainDetails);
-    }
-
-    if (studentId) {
-      const studentDomains = internshipDomains.filter(d => d.studentIds.includes(studentId));
-      if (studentDomains.length === 0) {
-        return res.status(404).json({ message: "No internship domains found for the given student ID." });
-      }
-      return res.json(studentDomains);
-    }
-
-    res.status(400).json({ message: "Please provide either a domain name or a student ID." });
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching internship domain details." });
-  }
-});
-
-// Add a new internship domain
-app.post("/api/add-internship-domain", async (req, res) => {
-  const { internshipDomain, studentIds, pdfFile } = req.body;
-
-  if (!internshipDomain || !studentIds || !pdfFile) {
-    return res.status(400).json({ message: "All fields are required." });
-  }
-
-  try {
-    const internshipDomains = await readJsonFile(internshipDomainsJsonFilePath, []);
-    internshipDomains.push({ internshipDomain, studentIds, pdfFile });
-    await writeJsonFile(internshipDomainsJsonFilePath, internshipDomains);
-    res.json({ success: true, message: "Internship domain added successfully!" });
-  } catch (error) {
-    res.status(500).json({ message: "Error adding internship domain." });
-  }
-});
-
-// Assign a student to an internship domain
-app.post("/api/assign-internship-domain", async (req, res) => {
-  const { studentId, internshipDomain } = req.body;
-
-  if (!studentId || !internshipDomain) {
-    return res.status(400).json({ message: "Student ID and internship domain are required." });
-  }
-
-  try {
-    const internshipDomains = await readJsonFile(internshipDomainsJsonFilePath, []);
-
-    // Find the internship domain
-    const domain = internshipDomains.find(d => d.internshipDomain === internshipDomain);
-    if (!domain) {
-      return res.status(404).json({ message: "Internship domain not found." });
-    }
-
-    // Check if the student is already assigned
-    if (domain.studentIds.includes(studentId)) {
-      return res.status(400).json({ message: "Student is already assigned to this internship domain." });
-    }
-
-    // Add the student to the domain
-    domain.studentIds.push(studentId);
-    await writeJsonFile(internshipDomainsJsonFilePath, internshipDomains);
-
-    res.json({ message: `Student ID "${studentId}" assigned to "${internshipDomain}" successfully.` });
-  } catch (error) {
-    res.status(500).json({ message: "Error assigning internship domain." });
-  }
-});
-// ==================== Task APIs ====================
-
-// Fetch all tasks
-app.get("/api/tasks", async (req, res) => {
-  try {
-    const tasks = await readJsonFile(studentProjectsJsonFilePath, []);
-    res.json(tasks);
-  } catch (error) {
-    res.status(500).json({ message: "Error reading tasks." });
-  }
-});
-
-// Add a new task
-app.post("/add-task", async (req, res) => {
-  const { taskId, taskName, assignedTo, status } = req.body;
-
-  if (!taskId || !taskName || !assignedTo || !status) {
-    return res.status(400).json({ message: "All fields are required." });
-  }
-
-  try {
-    const tasks = await readJsonFile(studentProjectsJsonFilePath, []);
-    tasks.push({ taskId, taskName, assignedTo, status });
-    await writeJsonFile(studentProjectsJsonFilePath, tasks);
-    res.json({ message: `Task ${taskName} added successfully!` });
+    
+    await writeJsonFile(studentStatusJsonFilePath, studentsData);
+    res.json({ message: `Student ID ${studentId} status updated to ${status}!` });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
 
-// Update student status
-app.post("/update-student-status", async (req, res) => {
-  const { studentId, status } = req.body;
+// API to save generated certificate numbers
+app.post('/progressreportuserofinternshipscompletedinternship', async (req, res) => {
+  const { studentId, certificateNumber } = req.body;
 
-  if (!studentId || !status) {
-    return res.status(400).json({ message: "Student ID and status are required." });
+  if (!studentId || !certificateNumber) {
+      return res.status(400).json({ success: false, message: 'Missing studentId or certificateNumber' });
   }
 
   try {
-    const studentStatuses = await readJsonFile(studentStatusJsonFilePath, []);
+      let certificates = await readJsonFile(studentCertificatesFile, []);
+      const existingCertificate = certificates.find(cert => cert.certificateNumber === certificateNumber);
+      if (existingCertificate) {
+          return res.status(400).json({ success: false, message: 'Certificate number already exists' });
+      }
 
-    // Check if the student ID exists
-    const studentIndex = studentStatuses.findIndex(s => s.studentId === studentId);
-    if (studentIndex === -1) {
-      return res.status(404).json({ message: "Student ID not found." });
-    }
+      certificates.push({ studentId, certificateNumber });
+      await writeJsonFile(studentCertificatesFile, certificates);
 
-    // Update the status
-    studentStatuses[studentIndex].status = status;
-    await writeJsonFile(studentStatusJsonFilePath, studentStatuses);
-
-    res.json({ message: `Status for Student ID "${studentId}" updated successfully.` });
+      res.json({ success: true, message: 'Certificate saved successfully' });
   } catch (error) {
-    console.error("Error updating student status:", error);
-    res.status(500).json({ message: "Error updating student status." });
+      res.status(500).json({ success: false, message: 'Error saving certificate' });
   }
 });
 
-// Edit a task
-app.put("/edit-task", async (req, res) => {
-  const { taskId, updatedDetails } = req.body;
+// Route to handle adding a student ID to a specific internship domain
+app.post('/addStudent', async (req, res) => {
+  const { studentId, course } = req.body;
 
-  if (!taskId || !updatedDetails) {
-    return res.status(400).json({ success: false, message: "Task ID and updated details are required" });
+  if (!studentId || !course) {
+    return res.status(400).json({ success: false, message: 'Error: Missing studentId or course' });
   }
 
   try {
-    let tasks = await readJsonFile(studentProjectsJsonFilePath, []);
-    const taskIndex = tasks.findIndex(task => task.taskId === taskId);
+    let studentProjects = await readJsonFile(studentProjectsJsonFilePath, []);
+    const domain = studentProjects.find(item => item.internshipDomain === course);
 
-    if (taskIndex === -1) {
-      return res.status(404).json({ success: false, message: "Task not found" });
+    if (domain) {
+      if (!domain.studentIds.includes(studentId)) {
+        domain.studentIds.push(studentId);
+        await writeJsonFile(studentProjectsJsonFilePath, studentProjects);
+        return res.json({ success: true, message: 'Student ID added successfully' });
+      }
+      return res.status(400).json({ success: false, message: 'Error: Student ID already exists in this domain' });
     }
 
-    tasks[taskIndex] = { ...tasks[taskIndex], ...updatedDetails };
-    await writeJsonFile(studentProjectsJsonFilePath, tasks);
-
-    res.json({ success: true, message: "Task updated successfully" });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Error updating task" });
+    return res.status(400).json({ success: false, message: 'Error: Course not found' });
+  } catch (err) {
+    console.error('Error:', err);
+    return res.status(500).json({ success: false, message: 'Error processing request' });
   }
 });
 
-// Delete a task
-app.delete("/delete-task", async (req, res) => {
-  const { taskId } = req.body;
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-  if (!taskId) {
-    return res.status(400).json({ success: false, message: "Task ID is required" });
-  }
-
-  try {
-    let tasks = await readJsonFile(studentProjectsJsonFilePath, []);
-    const updatedTasks = tasks.filter(task => task.taskId !== taskId);
-
-    if (updatedTasks.length === tasks.length) {
-      return res.status(404).json({ success: false, message: "Task not found" });
-    }
-
-    await writeJsonFile(studentProjectsJsonFilePath, updatedTasks);
-    res.json({ success: true, message: "Task deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Error deleting task" });
-  }
+// Handle the root URL request
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// ==================== Start the Server ====================
+// Start the server
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
+    console.log(`🚀 Server is running on port ${PORT}`);
 });
