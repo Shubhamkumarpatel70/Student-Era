@@ -57,10 +57,11 @@ app.use(express.static(path.join(__dirname)));
 // ==================== Student ID APIs ====================
 
 // Fetch all student IDs
+// Fetch all student IDs
 app.get("/api/student-ids", async (req, res) => {
   try {
     const studentsData = await readJsonFile(studentsJsonFilePath, { validStudentIds: [] });
-    res.json(studentsData);
+    res.json({ students: studentsData.validStudentIds });
   } catch (error) {
     res.status(500).json({ message: "Error reading student IDs." });
   }
@@ -206,7 +207,7 @@ app.delete("/delete-certificate", async (req, res) => {
 // Fetch all internship domains
 app.get("/api/internship-domains", async (req, res) => {
   try {
-    const internshipDomains = await readJsonFile("lundi sutri kuch bhi/userselffetchtheirprojectsofapplieddomainuserprojects.json", []);
+    const internshipDomains = await readJsonFile(internshipDomainsJsonFilePath, []);
     res.json(internshipDomains);
   } catch (error) {
     res.status(500).json({ message: "Error reading internship domains." });
@@ -260,6 +261,37 @@ app.post("/api/add-internship-domain", async (req, res) => {
   }
 });
 
+// Assign a student to an internship domain
+app.post("/api/assign-internship-domain", async (req, res) => {
+  const { studentId, internshipDomain } = req.body;
+
+  if (!studentId || !internshipDomain) {
+    return res.status(400).json({ message: "Student ID and internship domain are required." });
+  }
+
+  try {
+    const internshipDomains = await readJsonFile(internshipDomainsJsonFilePath, []);
+
+    // Find the internship domain
+    const domain = internshipDomains.find(d => d.internshipDomain === internshipDomain);
+    if (!domain) {
+      return res.status(404).json({ message: "Internship domain not found." });
+    }
+
+    // Check if the student is already assigned
+    if (domain.studentIds.includes(studentId)) {
+      return res.status(400).json({ message: "Student is already assigned to this internship domain." });
+    }
+
+    // Add the student to the domain
+    domain.studentIds.push(studentId);
+    await writeJsonFile(internshipDomainsJsonFilePath, internshipDomains);
+
+    res.json({ message: `Student ID "${studentId}" assigned to "${internshipDomain}" successfully.` });
+  } catch (error) {
+    res.status(500).json({ message: "Error assigning internship domain." });
+  }
+});
 // ==================== Task APIs ====================
 
 // Fetch all tasks
@@ -287,6 +319,34 @@ app.post("/add-task", async (req, res) => {
     res.json({ message: `Task ${taskName} added successfully!` });
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+});
+
+// Update student status
+app.post("/update-student-status", async (req, res) => {
+  const { studentId, status } = req.body;
+
+  if (!studentId || !status) {
+    return res.status(400).json({ message: "Student ID and status are required." });
+  }
+
+  try {
+    const studentStatuses = await readJsonFile(studentStatusJsonFilePath, []);
+
+    // Check if the student ID exists
+    const studentIndex = studentStatuses.findIndex(s => s.studentId === studentId);
+    if (studentIndex === -1) {
+      return res.status(404).json({ message: "Student ID not found." });
+    }
+
+    // Update the status
+    studentStatuses[studentIndex].status = status;
+    await writeJsonFile(studentStatusJsonFilePath, studentStatuses);
+
+    res.json({ message: `Status for Student ID "${studentId}" updated successfully.` });
+  } catch (error) {
+    console.error("Error updating student status:", error);
+    res.status(500).json({ message: "Error updating student status." });
   }
 });
 
