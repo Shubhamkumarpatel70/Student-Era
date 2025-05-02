@@ -1,3 +1,10 @@
 [
-  
+  {
+    "studentId": "1122",
+    "certificateNumber": "CERT001"
+  },
+  {
+    "studentId": "2233",
+    "certificateNumber": "CERT002"
+  }
 ]

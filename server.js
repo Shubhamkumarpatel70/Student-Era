@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const fs = require('fs').promises;
 const path = require('path');
+
 // Create the Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,19 +14,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the generated student ID JSON file
-
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
-
-app.use(express.static(path.join(__dirname)));
-
-// In-memory data store
-let certificates = [];
-let studentsData = { validStudentIds: [] };
-let studentStatusData = [];
-let studentCertificates = [];
-let studentProjects = [];
 
 // JSON file paths
 const studentsJsonFilePath = 'lundi sutri kuch bhi/generatedstudentidofregisteredstudentatstudenterastudentid.json';
@@ -33,6 +24,9 @@ const certificatesJsonFilePath = 'lundi sutri kuch bhi/userrandomstudenteracheck
 const studentStatusJsonFilePath = 'lundi sutri kuch bhi/checkprogressofinternshipofusersinternshipprogress.json';
 const studentCertificatesFile = 'lundi sutri kuch bhi/progressreportuserofinternshipscompletedinternship.json';
 const studentProjectsJsonFilePath = 'lundi sutri kuch bhi/userselffetchtheirprojectsofapplieddomainuserprojects.json';
+
+// In-memory data store
+let certificates = [];
 
 // Utility function to read JSON file
 const readJsonFile = async (filePath, defaultValue = []) => {
@@ -69,6 +63,29 @@ app.post("/api/certificates", async (req, res) => {
   }
 });
 
+// API to delete a certificate
+app.delete('/delete-certificate', async (req, res) => {
+  const { studentId, certificateNumber } = req.body;
+
+  if (!studentId || !certificateNumber) {
+    return res.status(400).json({ success: false, message: 'Missing studentId or certificateNumber' });
+  }
+
+  try {
+    const certificates = await readJsonFile(studentCertificatesFile, []);
+    const updatedCertificates = certificates.filter(cert => !(cert.studentId === studentId && cert.certificateNumber === certificateNumber));
+
+    if (updatedCertificates.length === certificates.length) {
+      return res.status(404).json({ success: false, message: 'Certificate not found' });
+    }
+
+    await writeJsonFile(studentCertificatesFile, updatedCertificates);
+    res.json({ success: true, message: 'Certificate deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Error deleting certificate' });
+  }
+});
+
 // API to verify certificates in memory
 app.get("/api/certificates/:certId", async (req, res) => {
   try {
@@ -93,13 +110,13 @@ app.get('/generatedstudentidofregisteredstudentatstudenterastudentid', async (re
   }
 });
 
-// Serve the generated student ID JSON file
-app.get('/api/student-ids', async (req, res) => {
+// API to fetch all student certificates
+app.get('/progressreportuserofinternshipscompletedinternship', async (req, res) => {
   try {
-    const studentsData = await readJsonFile(studentsJsonFilePath, { validStudentIds: [] });
-    res.json(studentsData);
+    const certificates = await readJsonFile(studentCertificatesFile, []);
+    res.json(certificates);
   } catch (error) {
-    res.status(500).json({ message: "Error reading student IDs." });
+    res.status(500).json({ success: false, message: 'Error reading certificate data' });
   }
 });
 
@@ -151,23 +168,6 @@ app.delete('/delete-student', async (req, res) => {
   }
 });
 
-// API to add certificate details
-app.post('/add-certificate', async (req, res) => {
-  const { certificateNumber, name, course, duration, college, issuedDate, studentId } = req.body;
-  if (!certificateNumber || !name || !course || !duration || !college || !issuedDate || !studentId) {
-    return res.status(400).json({ message: "All fields are required." });
-  }
-
-  try {
-    const certificatesData = await readJsonFile(certificatesJsonFilePath, []);
-    certificatesData.push({ certificateNumber, name, course, duration, college, issuedDate, studentId });
-    await writeJsonFile(certificatesJsonFilePath, certificatesData);
-    res.json({ message: `Certificate for ${name} added successfully!` });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
 // API to save generated certificate numbers
 app.post('/save-certificate', async (req, res) => {
   const { studentId, certificateNumber } = req.body;
@@ -178,9 +178,11 @@ app.post('/save-certificate', async (req, res) => {
 
   try {
     let certificates = await readJsonFile(studentCertificatesFile, []);
-    const existingCertificate = certificates.find(cert => cert.certificateNumber === certificateNumber);
+    
+    // Check for existing certificate to prevent duplicates
+    const existingCertificate = certificates.find(cert => cert.studentId === studentId && cert.certificateNumber === certificateNumber);
     if (existingCertificate) {
-      return res.status(400).json({ success: false, message: 'Certificate number already exists' });
+      return res.status(400).json({ success: false, message: 'Certificate number already exists for this student' });
     }
 
     certificates.push({ studentId, certificateNumber });
@@ -192,53 +194,17 @@ app.post('/save-certificate', async (req, res) => {
   }
 });
 
-// API to update student status
-app.post('/update-student-status', async (req, res) => {
-  const { studentId, status } = req.body;
-  if (!studentId || !['complete', 'incomplete'].includes(status)) {
-    return res.status(400).json({ message: "Invalid student ID or status." });
-  }
-
+// API to fetch all student certificates
+app.get('/progressreportuserofinternshipscompletedinternship', async (req, res) => {
   try {
-    let studentsData = await readJsonFile(studentStatusJsonFilePath, []);
-    const studentIndex = studentsData.findIndex(student => student.studentId === studentId);
-    
-    if (studentIndex !== -1) {
-      studentsData[studentIndex].status = status;
-    } else {
-      studentsData.push({ studentId, status });
-    }
-    
-    await writeJsonFile(studentStatusJsonFilePath, studentsData);
-    res.json({ message: `Student ID ${studentId} status updated to ${status}!` });
+    const certificates = await readJsonFile(studentCertificatesFile, []);
+    // Ensure certificates have the required properties like certificateNumber
+    res.json(certificates); // Return certificates directly as JSON
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ success: false, message: 'Error reading certificate data' });
   }
 });
 
-// API to save generated certificate numbers
-app.post('/progressreportuserofinternshipscompletedinternship', async (req, res) => {
-  const { studentId, certificateNumber } = req.body;
-
-  if (!studentId || !certificateNumber) {
-      return res.status(400).json({ success: false, message: 'Missing studentId or certificateNumber' });
-  }
-
-  try {
-      let certificates = await readJsonFile(studentCertificatesFile, []);
-      const existingCertificate = certificates.find(cert => cert.certificateNumber === certificateNumber);
-      if (existingCertificate) {
-          return res.status(400).json({ success: false, message: 'Certificate number already exists' });
-      }
-
-      certificates.push({ studentId, certificateNumber });
-      await writeJsonFile(studentCertificatesFile, certificates);
-
-      res.json({ success: true, message: 'Certificate saved successfully' });
-  } catch (error) {
-      res.status(500).json({ success: false, message: 'Error saving certificate' });
-  }
-});
 
 // Route to handle adding a student ID to a specific internship domain
 app.post('/addStudent', async (req, res) => {
@@ -268,15 +234,12 @@ app.post('/addStudent', async (req, res) => {
   }
 });
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Handle the root URL request
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+// Error handling for undefined routes (404)
+app.use((req, res) => {
+  res.status(404).json({ error: 'Endpoint not found' });
 });
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
