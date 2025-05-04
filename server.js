@@ -11,7 +11,9 @@ const PORT = process.env.PORT || 5000;
 // Enable CORS for all routes
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
+
+console.log(path.join(__dirname))
 
 // Serve the generated student ID JSON file
 app.get("/", (req, res) => {
